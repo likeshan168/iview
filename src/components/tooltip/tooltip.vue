@@ -14,7 +14,7 @@
                 v-transfer-dom>
                 <div :class="[prefixCls + '-content']">
                     <div :class="[prefixCls + '-arrow']"></div>
-                    <div :class="[prefixCls + '-inner']"><slot name="content">{{ content }}</slot></div>
+                    <div :class="[prefixCls + '-inner',innerClass]"><slot name="content">{{ content }}</slot></div>
                 </div>
             </div>
         </transition>
@@ -40,6 +40,10 @@
             },
             content: {
                 type: [String, Number],
+                default: ''
+            },
+            innerClass: {
+                type: String,
                 default: ''
             },
             delay: {
